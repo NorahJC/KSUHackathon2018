@@ -1,5 +1,6 @@
 package hackathon.bankservice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,15 +15,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Button buttonMain = (Button) findViewById(R.id.buttonMain);
+        Button btnRegister = (Button) findViewById(R.id.btnRegister);
+        final Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        EditText username = (EditText) findViewById(R.id.edit);
+        EditTetxt password = (EditText) findViewById(R.id.)
 
-
-
-        buttonMain.setOnClickListener(new View.OnClickListener(){
+        btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-                buttonMain.setText("test");
+                Intent goToRegister = new Intent();
+                goToRegister.setClass(this, Register.class);
+                startActivity(goToRegister);
+                finish();
             }
         });
 
