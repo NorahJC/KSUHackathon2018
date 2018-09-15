@@ -24,6 +24,7 @@ public class Main extends AppCompatActivity {
     public void goToInfo(View v){
         Intent moveToInfo = new Intent();
         moveToInfo.setClass(this, accontInfo.class);
+        moveToInfo.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
         startActivity(moveToInfo);
         finish();
     }
@@ -31,6 +32,7 @@ public class Main extends AppCompatActivity {
     public void goToScanner(View v){
         Intent moveToScanner = new Intent();
         moveToScanner.setClass(this, scanner.class);
+        moveToScanner.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
         startActivity(moveToScanner);
         finish();
     }
@@ -38,6 +40,7 @@ public class Main extends AppCompatActivity {
     public void goToCart(View v){
         Intent moveToCart = new Intent();
         moveToCart.setClass(this, cart.class);
+        moveToCart.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
         startActivity(moveToCart);
         finish();
     }

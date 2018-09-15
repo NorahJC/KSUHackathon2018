@@ -16,6 +16,7 @@ public class accontInfo extends AppCompatActivity {
     public void goToLogin(View v){
         Intent moveToLogin = new Intent();
         moveToLogin.setClass(this, LoginRegister.class);
+
         startActivity(moveToLogin);
         finish();
     }
@@ -23,6 +24,7 @@ public class accontInfo extends AppCompatActivity {
     public void goTomain(View v){
         Intent moveToMain = new Intent();
         moveToMain.setClass(this, Main.class);
+        moveToMain.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
         startActivity(moveToMain);
         finish();
     }
