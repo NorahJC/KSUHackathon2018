@@ -12,6 +12,8 @@
 
     <Button
         android:id="@+id/btnMain"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -27,6 +29,8 @@
 
     <Button
         android:id="@+id/btnCart"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -59,6 +63,8 @@
 
     <Button
         android:id="@+id/zxing_barcode_scanner"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

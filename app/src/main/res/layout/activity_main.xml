@@ -6,84 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".Main">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="131dp"
+        app:srcCompat="@drawable/kuicklogo" />
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:text="--KuickScan--"
+
+        android:text=""
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/instructionsView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnSignOut"
+        />
+
 
     <Button
         android:id="@+id/btnScanner"
-        android:layout_width="350dp"
-        android:layout_height="198dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+
         android:onClick="goToScanner"
         android:text="Go to Scanner"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnAccountInfo"
+        />
+
 
     <Button
         android:id="@+id/btnCart"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="34dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
         android:onClick="goToCart"
         android:text="Cart"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnScanner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnAccountInfo"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@id/btnScanner"
+
+         />
 
     <Button
         android:id="@+id/btnAccountInfo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="15dp"
+
         android:onClick="goToInfo"
         android:text="Account Info"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnScanner"
-        app:layout_constraintEnd_toStartOf="@+id/btnCart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+       app:layout_constraintTop_toBottomOf="@id/textView"
+       app:layout_constraintBottom_toTopOf="@id/btnScanner"
+        />
 
     <Button
         android:id="@+id/btnSignOut"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+
         android:onClick="goToLogin"
         android:text="Sign Out"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/textView"
+
+        />
 </android.support.constraint.ConstraintLayout>

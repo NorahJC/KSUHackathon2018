@@ -8,10 +8,15 @@ import android.view.View;
 
 public class Main extends AppCompatActivity {
 
+    String accountID;
+    int balance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        accountID = getIntent().getStringExtra("accID");
+        balance = getIntent().getIntExtra("bal", 200);
     }
 
     public void goToLogin(View v){
@@ -25,6 +30,8 @@ public class Main extends AppCompatActivity {
         Intent moveToInfo = new Intent();
         moveToInfo.setClass(this, accontInfo.class);
         moveToInfo.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
+        String accID = getIntent().getStringExtra("accID");
+        moveToInfo.putExtra("accID", accID );
         startActivity(moveToInfo);
         finish();
     }
@@ -33,6 +40,7 @@ public class Main extends AppCompatActivity {
         Intent moveToScanner = new Intent();
         moveToScanner.setClass(this, scanner.class);
         moveToScanner.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
+        moveToScanner.putExtra("accID", accountID );
         startActivity(moveToScanner);
         finish();
     }
@@ -41,6 +49,8 @@ public class Main extends AppCompatActivity {
         Intent moveToCart = new Intent();
         moveToCart.setClass(this, cart.class);
         moveToCart.putStringArrayListExtra("cart", getIntent().getStringArrayListExtra("cart"));
+        moveToCart.putExtra("accID", accountID );
+        moveToCart.putExtra("bal", balance);
         startActivity(moveToCart);
         finish();
     }

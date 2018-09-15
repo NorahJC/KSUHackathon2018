@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class Register extends AppCompatActivity {
+    InComm incomm = new InComm();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +15,18 @@ public class Register extends AppCompatActivity {
     }
 
     public void submit(View v){
+       // incomm.getAccount(this, "sOIY5nqgkzrYXzcCxdSj");
+        incomm.createAccount(this);
+    }
+
+    public void callback (String data) {
         Intent goToMain = new Intent();
         goToMain.setClass(this, Main.class);
+        goToMain.putExtra("accID", data);
+        incomm.updateAccount(this, data,1000);
+        goToMain.putExtra("bal", 1000);
+
+
         startActivity(goToMain);
         finish();
     }

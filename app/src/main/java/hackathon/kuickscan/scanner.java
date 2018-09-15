@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class scanner extends AppCompatActivity {
     private Button zxing_barcode_scanner;
+    String accountID;
 
     ArrayList<String> cart;
     ArrayList<String> oldCart;
@@ -25,6 +26,11 @@ public class scanner extends AppCompatActivity {
         setContentView(R.layout.activity_scanner);
         zxing_barcode_scanner = (Button) findViewById(R.id.zxing_barcode_scanner);
         final Activity activity = this;
+        accountID =  getIntent().getStringExtra("accID");
+
+
+        oldCart = getIntent().getStringArrayListExtra("cart");
+        cart = new ArrayList<String>();
 
         //Save info if already cart
         if(oldCart != null){
@@ -69,6 +75,8 @@ public class scanner extends AppCompatActivity {
         Intent moveToCart = new Intent();
         moveToCart.setClass(this, cart.class);
         moveToCart.putStringArrayListExtra("cart", cart);
+        moveToCart.putExtra("accID", accountID);
+
         startActivity(moveToCart);
         finish();
     }
@@ -77,7 +85,9 @@ public class scanner extends AppCompatActivity {
         Intent moveToMain = new Intent();
         moveToMain.setClass(this, Main.class);
         moveToMain.putStringArrayListExtra("cart", cart);
+        moveToMain.putExtra("accID", accountID);
         startActivity(moveToMain);
+
         finish();
     }
 
